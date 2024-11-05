@@ -33,7 +33,3 @@ void ft_print(int count, ...)
 		printf("%s", str);
 	}
 }
-int main()
-{
-	ft_print(2, "hello ", "zouhair");
-}
