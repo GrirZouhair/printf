@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:12:06 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:14:12 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:41:48 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	ft_printf(const char *format, ...)
 	int	i;
 	char	*printed_char;
 
+	printed_char = NULL;
 	i = 0;
 	while (format[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:47:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:01:09 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:42:21 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	ft_ptr(char *s)
 	unsigned long	n;
 	char			*hex;
 
+	n = 0;
 	hex = "0123456789abcdef";
 	ft_putchar('0');
 	ft_putchar('x');
