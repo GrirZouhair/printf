@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:52:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 10:38:47 by zogrir           ###   ########.fr       */
+/*   Created: 2024/11/07 12:47:48 by zogrir            #+#    #+#             */
+/*   Updated: 2024/11/07 13:54:24 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include"printf.h"
 
-int	ft_putnbr(int n)
+void	ft_puthx(unsigned long n)
 {
-	if (n == 0)
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	if (n >= 16)
 	{
-		write(1, "0", 1);
+		ft_puthx((n / 16));
+	}
+	ft_putchar(hex[n % 16]);
+}
+
+int	ft_ptr(char *s)
+{
+	unsigned long	n;
+	char			*hex;
+
+	hex = "0123456789abcdef";
+	ft_putchar('0');
+	ft_putchar('x');
+	if (s == NULL)
+	{
+		ft_putchar('0');
 		return (1);
 	}
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');
-		
-	}
-	else
-	{
-		ft_putchar(n + '0');
-	}
-	return(1);
+	ft_puthx(n);
+	return (1);
 }

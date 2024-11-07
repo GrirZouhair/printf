@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:12:06 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/05 17:36:55 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 13:57:08 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,26 @@ int	ft_printf(const char *format, ...)
 			{
 				printed_char += ft_putnbr(va_arg(args, int));
 			}
-			// else if (format[i + 1] == 'u') // unsigned decimal
-			// {
-			// 	printed_char += ft_putnbr_uns(va_arg(args, int));
-			// }
-			// else if (format[i + 1] == 'x') // convert into hex code
-			// {
-			// 	printed_char += ft_hex(va_arg(args, char *));
-			// }
-			// else if (format[i + 1] == 'X')
-			// {
-			// 	printed_char += ft_hex(va_arg(args, char *));
-			// }
-			// else if (format[i + 1] == 'p') // pointer
-			// {
-			// 	printed_char += ft_ptr(va_arg(args, char *));
-			// }
-			// else if (format[i + 1] == '%')
-			// {
-			// 	printed_char += ft_putchar('%');
-			// }
+			else if (format[i + 1] == 'u') // unsigned decimal
+			{
+				printed_char += ft_putnbr_uns(va_arg(args, int));
+			}
+			else if (format[i + 1] == 'x') // convert into hex code
+			{
+				printed_char += ft_hex_lower(va_arg(args, int));
+			}
+			else if (format[i + 1] == 'X')
+			{
+				printed_char += ft_hex_upper(va_arg(args, int));
+			}
+			else if (format[i + 1] == 'p') // pointer
+			{
+				printed_char += ft_ptr(va_arg(args, void *));
+			}
+			else if (format[i + 1] == '%')
+			{
+				printed_char += ft_putchar('%');
+			}
 			i++;
 		}
 		else
@@ -71,5 +71,10 @@ int main()
 	int nbr = 1234;
 	char string[] = "zouhair";
 	char c = 'z';
-	ft_printf("decimal : %d | string : %s | caractere :  %c", nbr, string, c);
+	unsigned int nbr_unsigned = 999;
+	int h = 15;
+	int ptr = 123;
+	ft_printf("decimal : %d,%i| string : %s | caractere :  %c | unsigned decimal : %u\n",nbr, nbr, string, c, nbr_unsigned);
+	printf("\n");
+	ft_printf("lower_hexcode : %x | upper_hexcode : %X | adrees of memory : %p | just %%\n", h, h, ptr);
 }

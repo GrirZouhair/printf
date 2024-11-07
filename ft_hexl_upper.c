@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_hexl_upper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:52:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 10:38:47 by zogrir           ###   ########.fr       */
+/*   Created: 2024/11/07 12:34:54 by zogrir            #+#    #+#             */
+/*   Updated: 2024/11/07 12:39:46 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include"printf.h"
 
-int	ft_putnbr(int n)
+int	ft_hex_upper(unsigned int n)
 {
-	if (n == 0)
+	int hex;
+	if (n >= 16)
 	{
-		write(1, "0", 1);
-		return (1);
+		ft_hex_upper(n / 16);
 	}
-	if (n == -2147483648)
+	hex = (n % 16);
+	if (hex < 10)
 	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');
-		
+		hex += '0';
 	}
 	else
 	{
-		ft_putchar(n + '0');
+		hex += 'A' - 10;
 	}
+	ft_putchar(hex);
 	return(1);
 }
