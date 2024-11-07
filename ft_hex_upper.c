@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexl_upper.c                                    :+:      :+:    :+:   */
+/*   ft_hex_upper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:34:54 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 12:39:46 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:04:13 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "printf.h"
 
-int	ft_hex_upper(unsigned int n)
+char	ft_hex_upper(unsigned int n)
 {
-	int hex;
+	int	hex;
+
 	if (n >= 16)
 	{
 		ft_hex_upper(n / 16);
@@ -29,5 +30,5 @@ int	ft_hex_upper(unsigned int n)
 		hex += 'A' - 10;
 	}
 	ft_putchar(hex);
-	return(1);
+	return (1);
 }

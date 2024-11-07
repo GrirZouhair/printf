@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:52:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 10:38:47 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:02:07 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putnbr(int n)
+char	ft_putnbr(int n)
 {
 	if (n == 0)
 	{

@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:39:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/05 17:34:14 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:02:05 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int ft_putstr(char *s)
+char ft_putstr(char *s)
 {
 	int	i;
 

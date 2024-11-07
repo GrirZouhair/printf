@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:47:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 13:54:24 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:01:09 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_puthx(unsigned long n)
 	ft_putchar(hex[n % 16]);
 }
 
-int	ft_ptr(char *s)
+char	ft_ptr(char *s)
 {
 	unsigned long	n;
 	char			*hex;

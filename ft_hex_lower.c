@@ -6,15 +6,16 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:46:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 12:39:55 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:03:24 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "printf.h"
 
-int	ft_hex_lower(unsigned int n)
+char	ft_hex_lower(unsigned int n)
 {
-	int hex;
+	int	hex;
+
 	if (n >= 16)
 	{
 		ft_hex_lower(n / 16);
@@ -29,5 +30,5 @@ int	ft_hex_lower(unsigned int n)
 		hex += 'a' - 10;
 	}
 	ft_putchar(hex);
-	return(1);
+	return (1);
 }

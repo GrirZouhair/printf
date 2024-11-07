@@ -6,14 +6,14 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:43:02 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/05 17:34:48 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:02:10 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int ft_putchar(char c)
+char ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return(1);
+	return (1);
 }

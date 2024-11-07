@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:37:15 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 12:33:38 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:02:09 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int ft_putnbr_uns(unsigned int n)
+char ft_putnbr_uns(unsigned int n)
 {
 	if (n == 0)
 	{
@@ -22,8 +22,7 @@ int ft_putnbr_uns(unsigned int n)
 	if (n > 9)
 	{
 		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');
-		
+		ft_putchar((n % 10) + '0');	
 	}
 	else
 	{
