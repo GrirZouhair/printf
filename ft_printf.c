@@ -6,19 +6,19 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:12:06 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:41:48 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/14 17:36:04 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 char	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	va_start(args, format);
 	int	i;
-	char	*printed_char;
+	int	printed_char;
 
-	printed_char = NULL;
+	printed_char = 0;
 	i = 0;
 	while (format[i])
 	{
@@ -46,18 +46,23 @@ char	ft_printf(const char *format, ...)
 			printed_char += ft_putchar(format[i]);	
 		i++;
 	}
-		return ((char)printed_char);
+		return (printed_char);
 }
 
-// int main()
-// {
-// 	int nbr = 1234;
-// 	char string[] = "zouhair";
-// 	char c = 'z';
-// 	unsigned int nbr_unsigned = 999;
-// 	int h = 15;
-// 	int ptr = 123;
-// 	ft_printf("decimal : %d,%i| string : %s | caractere :  %c | unsigned decimal : %u\n",nbr, nbr, string, c, nbr_unsigned);
-// 	printf("\n");
-// 	ft_printf("lower_hexcode : %x | upper_hexcode : %X | adrees of memory : %p | just %%\n", h, h, ptr);
-// }
+int main()
+{
+	char nbr = 123;
+	char string[] = "zouhair";
+	char c = 'z';
+	unsigned int nbr_unsigned = -999;
+	int h = 1235;
+	int ptr = 1235;
+	int *pt= &ptr;
+	ft_printf("decimal : %d,%i| string : %s | caractere :  %c | unsigned decimal : %u\n",nbr, nbr, string, c, nbr_unsigned);
+	printf("\n");
+	ft_printf("lower_hexcode : %x | upper_hexcode : %X | adrees of memory : %pt | just %%\n", h, h, ptr);
+	// printf("cc-> %s\n", NULL);
+	// NULL 0 '\0'
+}
+
+

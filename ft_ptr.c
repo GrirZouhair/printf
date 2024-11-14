@@ -6,38 +6,40 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:47:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:42:21 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/14 17:35:34 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "ft_printf.h"
 
-void	ft_puthx(unsigned long n)
+int ft_putnbr_base(unsigned long nbr, const char *base)
 {
-	char	*hex;
+    int len = 0;
 
-	hex = "0123456789abcdef";
-	if (n >= 16)
-	{
-		ft_puthx((n / 16));
-	}
-	ft_putchar(hex[n % 16]);
+    if (nbr > 15)
+        len += ft_putnbr_base(nbr / 16, base);
+    
+    ft_putchar(base[nbr % 16]);
+    return len + 1;
 }
 
-char	ft_ptr(char *s)
+int	ft_ptr(void *ptr)
 {
-	unsigned long	n;
-	char			*hex;
+    unsigned long address = (unsigned long)ptr;
+    const char *base = "0123456789abcdef";
+    int len = 0;
 
-	n = 0;
-	hex = "0123456789abcdef";
-	ft_putchar('0');
-	ft_putchar('x');
-	if (s == NULL)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	ft_puthx(n);
-	return (1);
+    ft_putchar('0');
+    ft_putchar('x');
+    len += 2;
+    if (address == 0)
+    {
+        ft_putchar('0');
+        len += 1;
+    }
+    else
+    {
+        len += ft_putnbr_base(address, base);
+    }
+    return len;
 }

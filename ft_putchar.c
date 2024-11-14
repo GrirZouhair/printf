@@ -6,11 +6,11 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:43:02 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:02:10 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/09 17:28:14 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 char ft_putchar(char c)
 {

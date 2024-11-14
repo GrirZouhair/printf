@@ -6,11 +6,11 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:46:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:03:24 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/09 17:27:51 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 char	ft_hex_lower(unsigned int n)
 {

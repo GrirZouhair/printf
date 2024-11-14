@@ -6,14 +6,35 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:37:15 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:02:09 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/14 16:05:53 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-char ft_putnbr_uns(unsigned int n)
+int ft_len(unsigned int n)
 {
+	int len;
+
+	len = 0;
+	if(n <= 0)
+	{
+		len++;
+	}
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return(len);
+}
+
+
+int	ft_putnbr_uns(unsigned int n)
+{
+	int nbr;
+
+	nbr = n;
 	if (n == 0)
 	{
 		write(1, "0", 1);
@@ -28,5 +49,5 @@ char ft_putnbr_uns(unsigned int n)
 	{
 		ft_putchar(n + '0');
 	}
-	return(1);
+	return (ft_len(nbr));
 }

@@ -6,25 +6,26 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:39:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/07 15:02:05 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/14 10:32:59 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-char ft_putstr(char *s)
+int ft_putstr(char *s)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
+	if (s == NULL)
 	{
-		write(1, NULL, 1);
+		write(1, "(null)", 6);
+		return (6);
 	}
 	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;
 	}
-	return(1);
+	return(i);
 }

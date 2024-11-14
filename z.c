@@ -20,16 +20,27 @@ int main()
 }
 */
 
-#include<stdarg.h>
+// #include<stdarg.h>
+// #include<stdio.h>
+// void ft_print(int count, ...)
+// {
+// 	va_list args;
+// 	va_start(args, count);
+// 	char *str;
+// 	for (int i = 0; i < count; i++)
+// 	{
+// 		str = va_arg(args, char *);
+// 		printf("%s", str);
+// 	}
+// }
 #include<stdio.h>
-void ft_print(int count, ...)
-{
-	va_list args;
-	va_start(args, count);
-	char *str;
-	for (int i = 0; i < count; i++)
-	{
-		str = va_arg(args, char *);
-		printf("%s", str);
-	}
-}
+// int main()
+// {
+// 	int number = 21;
+// 	float n = 3.12345678;
+
+// 	printf("%5d\n", number);
+// 	printf("%.4f", n);
+// }
+
+
