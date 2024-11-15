@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:12:06 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/14 17:36:04 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/15 10:03:53 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,20 +49,43 @@ char	ft_printf(const char *format, ...)
 		return (printed_char);
 }
 
-int main()
+
+#include <stdio.h>
+#include "ft_printf.h"
+
+int main(void)
 {
-	char nbr = 123;
-	char string[] = "zouhair";
-	char c = 'z';
-	unsigned int nbr_unsigned = -999;
-	int h = 1235;
-	int ptr = 1235;
-	int *pt= &ptr;
-	ft_printf("decimal : %d,%i| string : %s | caractere :  %c | unsigned decimal : %u\n",nbr, nbr, string, c, nbr_unsigned);
-	printf("\n");
-	ft_printf("lower_hexcode : %x | upper_hexcode : %X | adrees of memory : %pt | just %%\n", h, h, ptr);
-	// printf("cc-> %s\n", NULL);
-	// NULL 0 '\0'
+    int ft_ret, std_ret;
+
+    // Test large integers
+    ft_ret = ft_printf("Unsigned max: %u\n", 4294967295);
+    std_ret = printf("Unsigned max: %u\n", 4294967295);
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    // Test NULL pointer
+    ft_ret = ft_printf("Null pointer: %p\n", NULL);
+    std_ret = printf("Null pointer: %p\n", NULL);
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    // Test precision and width
+    ft_ret = ft_printf("Width and precision: %10.5d\n", 42);
+    std_ret = printf("Width and precision: %10.5d\n", 42);
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    // Test 0 with precision
+    ft_ret = ft_printf("Zero with precision: %.0d\n", 0);
+    std_ret = printf("Zero with precision: %.0d\n", 0);
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    // Test hex with large number
+    ft_ret = ft_printf("Hex: %#x\n", 2147483647);
+    std_ret = printf("Hex: %#x\n", 2147483647);
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    // Test special case with '%'
+    ft_ret = ft_printf("Percent: %%\n");
+    std_ret = printf("Percent: %%\n");
+    printf("Return: ft_printf = %d, printf = %d\n\n", ft_ret, std_ret);
+
+    return 0;
 }
-
-

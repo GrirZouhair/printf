@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:47:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/14 17:35:34 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/15 09:30:55 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr_base(unsigned long nbr, const char *base)
+static int ft_putnbr_base(unsigned long nbr, const char *base)
 {
     int len = 0;
 
