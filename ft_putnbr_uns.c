@@ -6,18 +6,18 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:37:15 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/14 16:05:53 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:20:11 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-int ft_len(unsigned int n)
+int	ft_len(unsigned int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	if(n <= 0)
+	if (n <= 0)
 	{
 		len++;
 	}
@@ -26,13 +26,12 @@ int ft_len(unsigned int n)
 		len++;
 		n /= 10;
 	}
-	return(len);
+	return (len);
 }
-
 
 int	ft_putnbr_uns(unsigned int n)
 {
-	int nbr;
+	int	nbr;
 
 	nbr = n;
 	if (n == 0)
@@ -43,7 +42,7 @@ int	ft_putnbr_uns(unsigned int n)
 	if (n > 9)
 	{
 		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');	
+		ft_putchar((n % 10) + '0');
 	}
 	else
 	{

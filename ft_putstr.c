@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:39:48 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/14 10:32:59 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:25:28 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-int ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -27,5 +27,5 @@ int ft_putstr(char *s)
 		write(1, &s[i], 1);
 		i++;
 	}
-	return(i);
+	return (i);
 }

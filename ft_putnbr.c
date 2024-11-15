@@ -6,13 +6,13 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:52:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/14 15:59:42 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:29:23 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_len(int n)
+static	int	ft_len(int n)
 {
 	int	len;
 
@@ -26,14 +26,12 @@ static int ft_len(int n)
 		len++;
 		n /= 10;
 	}
-	return (len);	
+	return (len);
 }
-
-
 
 int	ft_putnbr(int n)
 {
-	int nbr;
+	int	nbr;
 
 	nbr = n;
 	if (n == 0)
@@ -55,11 +53,8 @@ int	ft_putnbr(int n)
 	{
 		ft_putnbr(n / 10);
 		ft_putchar((n % 10) + '0');
-		
 	}
 	else
-	{
 		ft_putchar(n + '0');
-	}
-	return(ft_len(nbr));
+	return (ft_len(nbr));
 }
