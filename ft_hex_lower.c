@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:46:16 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/15 15:05:03 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/11/16 10:40:16 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 static	int	ft_putnbr_base(unsigned int nbr, const char *base)
 {
-	int	len;
+	static int	len;
 
 	len = 0;
 	if (nbr > 15)
-		len += ft_putnbr_base(nbr / 16, base);
+		ft_putnbr_base(nbr / 16, base);
+	len++;
 	ft_putchar (base[nbr % 16]);
-	return (len + 1);
+	return (len);
 }
 
 int	ft_hex_lower(unsigned int n)
