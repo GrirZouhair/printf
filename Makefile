@@ -6,7 +6,7 @@
 #    By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:17:33 by zogrir            #+#    #+#              #
-#    Updated: 2024/11/15 09:53:33 by zogrir           ###   ########.fr        #
+#    Updated: 2024/11/24 12:39:25 by zogrir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,13 @@ NAME = libftprintf.a
 SRC = ft_hex_lower.c ft_hex_upper.c ft_printf.c ft_ptr.c ft_putchar.c \
 	ft_putnbr_uns.c ft_putnbr.c ft_putstr.c
 OBJS = $(SRC:.c=.o)
-LIB = ar -rcs
+LIB = ar -rc
 RM = rm -f
 CC = cc
 FLAGS = -Wall -Wextra -Werror
+
+
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -25,7 +28,6 @@ FLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJS)
 	$(LIB) $@ $(OBJS)
 
-all: $(NAME)
 clean:
 	$(RM) $(OBJS)
 
