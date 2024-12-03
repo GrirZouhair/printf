@@ -6,7 +6,7 @@
 /*   By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:12:06 by zogrir            #+#    #+#             */
-/*   Updated: 2024/11/28 21:19:03 by zogrir           ###   ########.fr       */
+/*   Updated: 2024/12/03 13:11:43 by zogrir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	printed_char = 0;
+	if (write(1, "", 0) == -1)
+		return (-1);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%')
 		{
-			printed_char += ft_format_specifiers(format[i + 1], args);
 			i++;
+			if (!format[i])
+				break ;
+			printed_char += ft_format_specifiers(format[i], args);
 		}
 		else
 			printed_char += ft_putchar(format[i]);
