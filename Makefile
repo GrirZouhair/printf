@@ -6,7 +6,7 @@
 #    By: zogrir <zogrir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:17:33 by zogrir            #+#    #+#              #
-#    Updated: 2024/12/03 08:26:56 by zogrir           ###   ########.fr        #
+#    Updated: 2024/12/05 22:45:02 by zogrir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-%.o: %.c
+%.o: %.c ft_printf.h
 	$(CC) $(FLAGS) -c $< -o $@
 	
 $(NAME): $(OBJS)
